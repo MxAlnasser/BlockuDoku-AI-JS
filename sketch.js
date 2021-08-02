@@ -1,18 +1,39 @@
 let game;
 
 function setup() {
-    createCanvas(630, 630);
+    window.canvas = createCanvas(450, 700);
+    window.canvas.parent("canvas");
     background(255);
 
-    game = new Game(630,630);
+    game = new Game(0, 70, canvas.width);
 
 }
 
 function draw() {
+
+    push();
+    fill(255);
+    //noStroke();
+    stroke(150);
+    rect(0, 0, canvas.width-1, canvas.height-1);
+
     game.draw();
+    drawScore();
+    pop();
+
 }
 
-
+function drawScore() {
+    push();
+    textAlign(CENTER, CENTER);
+    fill(0);
+    noStroke();
+    let scoreText = "Score: " + game.score;
+    let scoreTextSize= 30;
+    textSize(scoreTextSize);
+    text(scoreText, canvas.width/2, game.position.y/2);
+    pop();
+}
 
 function keyPressed() {
 

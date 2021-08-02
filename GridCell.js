@@ -6,7 +6,7 @@ class GridCell {
     }
 
 
-    draw(x, y, cellSize) {
+    draw(x, y, gamePosition, cellSize) {
         push();
 
         if(this.empty) {
@@ -17,7 +17,7 @@ class GridCell {
 
         stroke(200);
         strokeWeight(1);
-        rect(x+1, y+1, cellSize-2, cellSize-2);
+        rect(gamePosition.x+x+1, gamePosition.y+y+1, cellSize-2, cellSize-2);
 
         pop();
     }
