@@ -22,7 +22,7 @@ class Shape {
             strokeWeight(1);
             rect(gamePosition.x+(this.col+block.x)*cellSize+1,gamePosition.y+(this.row+block.y)*cellSize+1,  cellSize-2, cellSize-2);
         }
-        
+
         pop();
     }
 
